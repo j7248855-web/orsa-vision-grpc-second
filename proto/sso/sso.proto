@@ -1,0 +1,56 @@
+syntax = "proto3";
+
+package handle;
+
+option go_package = "../../gen;gps_pt";
+
+message GPRMC {
+    string header = 1;
+    string utc = 2;
+    string pos_status = 3;
+    string lat = 4;
+    string lat_dir = 5;
+    string lon = 6;
+    string lon_dir = 7;
+    string speed_kn = 8;
+    string track_true = 9;
+    string date = 10;
+    string mag_var = 11;
+    string var_dir = 12;
+    string mode_ind = 13;
+    string checksum = 14;
+}
+
+message GPGGA {
+    string header = 1;      // $GPGGA
+    string utc = 2;         // Время
+    string lat = 3;         // Широта
+    string lat_dir = 4;     // N/S
+    string lon = 5;         // Долгота
+    string lon_dir = 6;     // E/W
+    string quality = 7;     // Качество (1, 2 и т.д.)
+    string num_sats = 8;    // Количество спутников
+    string hdop = 9;        // Точность
+    string alt = 10;        // Высота
+    string alt_units = 11;  // Единицы (M)
+    string undulation = 12; // Отношение геоида к эллипсоиду
+    string und_units = 13;  // Единицы (M)
+    string age = 14;        // Возраст данных
+    string stn_id = 15;     // ID базовой станции
+    string checksum = 16;   // Контрольная сумма
+}
+
+message GPSData {
+    string sender = 1;
+    oneof payload{
+        GPRMC rmc = 2;
+        GPGGA gga = 3;
+    }
+}
+message Status {
+    bool status = 1;
+}
+service GPSTracker {
+    rpc Stream(GPSData) returns(Status);
+}
+
