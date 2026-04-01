@@ -1,4 +1,4 @@
-module orsa-vision-grpc-second
+module github.com/j7248855-web/orsa-vision-grpc-second
 
 go 1.25.5
 
