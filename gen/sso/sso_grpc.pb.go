@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.6.1
 // - protoc             v7.34.1
-// source: sso/sso.proto
+// source: proto/sso/sso.proto
 
 package gps_pt
 
@@ -117,5 +117,5 @@ var GPSTracker_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "sso/sso.proto",
+	Metadata: "proto/sso/sso.proto",
 }

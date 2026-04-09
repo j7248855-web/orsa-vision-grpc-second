@@ -2,7 +2,7 @@
 // versions:
 // 	protoc-gen-go v1.36.11
 // 	protoc        v7.34.1
-// source: sso/sso.proto
+// source: proto/sso/sso.proto
 
 package gps_pt
 
@@ -43,7 +43,7 @@ type GPRMC struct {
 
 func (x *GPRMC) Reset() {
 	*x = GPRMC{}
-	mi := &file_sso_sso_proto_msgTypes[0]
+	mi := &file_proto_sso_sso_proto_msgTypes[0]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -55,7 +55,7 @@ func (x *GPRMC) String() string {
 func (*GPRMC) ProtoMessage() {}
 
 func (x *GPRMC) ProtoReflect() protoreflect.Message {
-	mi := &file_sso_sso_proto_msgTypes[0]
+	mi := &file_proto_sso_sso_proto_msgTypes[0]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -68,7 +68,7 @@ func (x *GPRMC) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GPRMC.ProtoReflect.Descriptor instead.
 func (*GPRMC) Descriptor() ([]byte, []int) {
-	return file_sso_sso_proto_rawDescGZIP(), []int{0}
+	return file_proto_sso_sso_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *GPRMC) GetHeader() string {
@@ -193,7 +193,7 @@ type GPGGA struct {
 
 func (x *GPGGA) Reset() {
 	*x = GPGGA{}
-	mi := &file_sso_sso_proto_msgTypes[1]
+	mi := &file_proto_sso_sso_proto_msgTypes[1]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -205,7 +205,7 @@ func (x *GPGGA) String() string {
 func (*GPGGA) ProtoMessage() {}
 
 func (x *GPGGA) ProtoReflect() protoreflect.Message {
-	mi := &file_sso_sso_proto_msgTypes[1]
+	mi := &file_proto_sso_sso_proto_msgTypes[1]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -218,7 +218,7 @@ func (x *GPGGA) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GPGGA.ProtoReflect.Descriptor instead.
 func (*GPGGA) Descriptor() ([]byte, []int) {
-	return file_sso_sso_proto_rawDescGZIP(), []int{1}
+	return file_proto_sso_sso_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *GPGGA) GetHeader() string {
@@ -334,8 +334,8 @@ func (x *GPGGA) GetChecksum() string {
 }
 
 type GPSData struct {
-	state  protoimpl.MessageState `protogen:"open.v1"`
-	Sender string                 `protobuf:"bytes,1,opt,name=sender,proto3" json:"sender,omitempty"`
+	state    protoimpl.MessageState `protogen:"open.v1"`
+	DeviceIp string                 `protobuf:"bytes,1,opt,name=device_ip,json=deviceIp,proto3" json:"device_ip,omitempty"`
 	// Types that are valid to be assigned to Payload:
 	//
 	//	*GPSData_Rmc
@@ -347,7 +347,7 @@ type GPSData struct {
 
 func (x *GPSData) Reset() {
 	*x = GPSData{}
-	mi := &file_sso_sso_proto_msgTypes[2]
+	mi := &file_proto_sso_sso_proto_msgTypes[2]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -359,7 +359,7 @@ func (x *GPSData) String() string {
 func (*GPSData) ProtoMessage() {}
 
 func (x *GPSData) ProtoReflect() protoreflect.Message {
-	mi := &file_sso_sso_proto_msgTypes[2]
+	mi := &file_proto_sso_sso_proto_msgTypes[2]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -372,12 +372,12 @@ func (x *GPSData) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GPSData.ProtoReflect.Descriptor instead.
 func (*GPSData) Descriptor() ([]byte, []int) {
-	return file_sso_sso_proto_rawDescGZIP(), []int{2}
+	return file_proto_sso_sso_proto_rawDescGZIP(), []int{2}
 }
 
-func (x *GPSData) GetSender() string {
+func (x *GPSData) GetDeviceIp() string {
 	if x != nil {
-		return x.Sender
+		return x.DeviceIp
 	}
 	return ""
 }
@@ -432,7 +432,7 @@ type Status struct {
 
 func (x *Status) Reset() {
 	*x = Status{}
-	mi := &file_sso_sso_proto_msgTypes[3]
+	mi := &file_proto_sso_sso_proto_msgTypes[3]
 	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 	ms.StoreMessageInfo(mi)
 }
@@ -444,7 +444,7 @@ func (x *Status) String() string {
 func (*Status) ProtoMessage() {}
 
 func (x *Status) ProtoReflect() protoreflect.Message {
-	mi := &file_sso_sso_proto_msgTypes[3]
+	mi := &file_proto_sso_sso_proto_msgTypes[3]
 	if x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -457,7 +457,7 @@ func (x *Status) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use Status.ProtoReflect.Descriptor instead.
 func (*Status) Descriptor() ([]byte, []int) {
-	return file_sso_sso_proto_rawDescGZIP(), []int{3}
+	return file_proto_sso_sso_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *Status) GetStatus() bool {
@@ -467,11 +467,11 @@ func (x *Status) GetStatus() bool {
 	return false
 }
 
-var File_sso_sso_proto protoreflect.FileDescriptor
+var File_proto_sso_sso_proto protoreflect.FileDescriptor
 
-const file_sso_sso_proto_rawDesc = "" +
+const file_proto_sso_sso_proto_rawDesc = "" +
 	"\n" +
-	"\rsso/sso.proto\x12\x06handle\"\xdd\x02\n" +
+	"\x13proto/sso/sso.proto\x12\x06handle\"\xdd\x02\n" +
 	"\x05GPRMC\x12\x16\n" +
 	"\x06header\x18\x01 \x01(\tR\x06header\x12\x10\n" +
 	"\x03utc\x18\x02 \x01(\tR\x03utc\x12\x1d\n" +
@@ -509,9 +509,9 @@ const file_sso_sso_proto_rawDesc = "" +
 	"\tund_units\x18\r \x01(\tR\bundUnits\x12\x10\n" +
 	"\x03age\x18\x0e \x01(\tR\x03age\x12\x15\n" +
 	"\x06stn_id\x18\x0f \x01(\tR\x05stnId\x12\x1a\n" +
-	"\bchecksum\x18\x10 \x01(\tR\bchecksum\"r\n" +
-	"\aGPSData\x12\x16\n" +
-	"\x06sender\x18\x01 \x01(\tR\x06sender\x12!\n" +
+	"\bchecksum\x18\x10 \x01(\tR\bchecksum\"w\n" +
+	"\aGPSData\x12\x1b\n" +
+	"\tdevice_ip\x18\x01 \x01(\tR\bdeviceIp\x12!\n" +
 	"\x03rmc\x18\x02 \x01(\v2\r.handle.GPRMCH\x00R\x03rmc\x12!\n" +
 	"\x03gga\x18\x03 \x01(\v2\r.handle.GPGGAH\x00R\x03ggaB\t\n" +
 	"\apayload\" \n" +
@@ -522,25 +522,25 @@ const file_sso_sso_proto_rawDesc = "" +
 	"\x06Stream\x12\x0f.handle.GPSData\x1a\x0e.handle.StatusB\x12Z\x10../../gen;gps_ptb\x06proto3"
 
 var (
-	file_sso_sso_proto_rawDescOnce sync.Once
-	file_sso_sso_proto_rawDescData []byte
+	file_proto_sso_sso_proto_rawDescOnce sync.Once
+	file_proto_sso_sso_proto_rawDescData []byte
 )
 
-func file_sso_sso_proto_rawDescGZIP() []byte {
-	file_sso_sso_proto_rawDescOnce.Do(func() {
-		file_sso_sso_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_sso_sso_proto_rawDesc), len(file_sso_sso_proto_rawDesc)))
+func file_proto_sso_sso_proto_rawDescGZIP() []byte {
+	file_proto_sso_sso_proto_rawDescOnce.Do(func() {
+		file_proto_sso_sso_proto_rawDescData = protoimpl.X.CompressGZIP(unsafe.Slice(unsafe.StringData(file_proto_sso_sso_proto_rawDesc), len(file_proto_sso_sso_proto_rawDesc)))
 	})
-	return file_sso_sso_proto_rawDescData
+	return file_proto_sso_sso_proto_rawDescData
 }
 
-var file_sso_sso_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
-var file_sso_sso_proto_goTypes = []any{
+var file_proto_sso_sso_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
+var file_proto_sso_sso_proto_goTypes = []any{
 	(*GPRMC)(nil),   // 0: handle.GPRMC
 	(*GPGGA)(nil),   // 1: handle.GPGGA
 	(*GPSData)(nil), // 2: handle.GPSData
 	(*Status)(nil),  // 3: handle.Status
 }
-var file_sso_sso_proto_depIdxs = []int32{
+var file_proto_sso_sso_proto_depIdxs = []int32{
 	0, // 0: handle.GPSData.rmc:type_name -> handle.GPRMC
 	1, // 1: handle.GPSData.gga:type_name -> handle.GPGGA
 	2, // 2: handle.GPSTracker.Stream:input_type -> handle.GPSData
@@ -552,12 +552,12 @@ var file_sso_sso_proto_depIdxs = []int32{
 	0, // [0:2] is the sub-list for field type_name
 }
 
-func init() { file_sso_sso_proto_init() }
-func file_sso_sso_proto_init() {
-	if File_sso_sso_proto != nil {
+func init() { file_proto_sso_sso_proto_init() }
+func file_proto_sso_sso_proto_init() {
+	if File_proto_sso_sso_proto != nil {
 		return
 	}
-	file_sso_sso_proto_msgTypes[2].OneofWrappers = []any{
+	file_proto_sso_sso_proto_msgTypes[2].OneofWrappers = []any{
 		(*GPSData_Rmc)(nil),
 		(*GPSData_Gga)(nil),
 	}
@@ -565,17 +565,17 @@ func file_sso_sso_proto_init() {
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: unsafe.Slice(unsafe.StringData(file_sso_sso_proto_rawDesc), len(file_sso_sso_proto_rawDesc)),
+			RawDescriptor: unsafe.Slice(unsafe.StringData(file_proto_sso_sso_proto_rawDesc), len(file_proto_sso_sso_proto_rawDesc)),
 			NumEnums:      0,
 			NumMessages:   4,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_sso_sso_proto_goTypes,
-		DependencyIndexes: file_sso_sso_proto_depIdxs,
-		MessageInfos:      file_sso_sso_proto_msgTypes,
+		GoTypes:           file_proto_sso_sso_proto_goTypes,
+		DependencyIndexes: file_proto_sso_sso_proto_depIdxs,
+		MessageInfos:      file_proto_sso_sso_proto_msgTypes,
 	}.Build()
-	File_sso_sso_proto = out.File
-	file_sso_sso_proto_goTypes = nil
-	file_sso_sso_proto_depIdxs = nil
+	File_proto_sso_sso_proto = out.File
+	file_proto_sso_sso_proto_goTypes = nil
+	file_proto_sso_sso_proto_depIdxs = nil
 }
